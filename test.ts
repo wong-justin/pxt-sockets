@@ -11,7 +11,7 @@ control.runInParallel(function() {
             console.log(`--> ${data}`)
         }
         ws.onopen = () => {
-            console.log('url:' + ws.url)
+            console.log(`opened url: ${ws.url}`);
             forever(() => {
                 const m = `makecode ${control.millis()}`;
                 console.log(`<-- ${m}`)
@@ -32,6 +32,7 @@ control.runInParallel(function() {
             console.log(`--> ${(data as Buffer).toHex()}`)
         }
         ws.onopen = () => {
+            console.log(`opened url: ${ws.url}`);
             forever(() => {
                 const b = Buffer.fromArray([control.millis()]);
                 console.log(`<-- ${b.toHex()}`)
