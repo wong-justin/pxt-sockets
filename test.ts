@@ -11,6 +11,7 @@ control.runInParallel(function() {
             console.log(`--> ${data}`)
         }
         ws.onopen = () => {
+            console.log('url:' + ws.url)
             forever(() => {
                 const m = `makecode ${control.millis()}`;
                 console.log(`<-- ${m}`)
